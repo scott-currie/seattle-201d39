@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM DEMO</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <ul id="stuff">
+    <li>Item a</li>
+    <li>Item b</li>
+    <li>Item c</li>
+  </ul>
+
+  <script>
+    // Find Our <ul>
+    var stuffList = document.getElementById("stuff");
+
+    // Create a new List Item in the DOM
+    var newLi = document.createElement('li');
+
+    // Give it some text
+    newLi.textContent = "New List Item!";
+
+    // Add it to the end of the UL
+    stuffList.appendChild(newLi);
+
+    // Change the UL to have the "bald" class on it (turns it red)
+    newStuff.classList.add('bald');
+
+  </script>
+
+</body>
+
+</html>
