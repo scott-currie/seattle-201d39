@@ -1,0 +1,28 @@
+* {
+	font-family: 'Cinzel', sans-serif;
+}
+
+ body {
+   background: rgb(114, 175, 216); 
+}
+
+h1, h2, legend {
+	color: rgb(255, 255, 255);
+}
+
+table {
+	border: 10px solid rgb(43, 6, 29); 
+	empty-cells: hide;
+}
+
+td {
+	padding: 10px;
+	border-radius: 15px;
+    border: 1px solid black;
+    background: white;
+}
+
+th {
+	background-color: #F7B733;
+    color: #76323F;
+}
