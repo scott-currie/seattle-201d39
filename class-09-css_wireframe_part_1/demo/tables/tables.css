@@ -1,0 +1,73 @@
+main {
+    padding: 1em;
+}
+
+/* --------- CLASSY LOOK ------------ */
+
+table {
+    width: 80%;
+    margin: 1em;
+}
+
+th {
+    font-weight: bold;
+}
+
+table.classy th, table.classy td {
+    margin: 1em;
+    padding: 1em;
+    position: relative;
+    border-left: 1em solid #fff;
+    border-right: 1em solid #fff;
+}
+
+table.classy tr {
+    border-bottom: 1px solid navy;
+    transition: all .1s linear;
+}
+
+table.classy thead tr:first-child {
+    border-bottom: 3px solid navy;
+    color: navy;
+}
+
+table.classy tbody tr:hover {
+    background: #444;
+    color: #fff;
+}
+
+/* --------- EXCEL LOOK ------------ */
+table.excel {
+    border-radius: 6px;
+}
+
+table.excel thead {
+    background: #ccc;
+    border: 1px solid #ccc;
+}
+
+table.excel th {
+    border: 1px groove #eee;
+    font-size: 1em;
+    padding: .25em;
+    text-align: left;
+}
+
+table.excel tbody {
+    border: 1px solid #eee;
+}
+
+table.excel td {
+    border: 1px solid #eee;
+    font-size: .9em;
+    padding: .1em;
+}
+
+table.excel td:hover {
+    background: aliceblue;
+}
+
+table.excel tr td:first-child {
+    background: #eee;
+    border: none;
+}
