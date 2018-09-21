@@ -42,4 +42,4 @@ OPTIONAL: Add some JavaScript functionality! Get creative, but make sure the sty
 
 **Submit your work:**
 
-Use the link in Canvas at [https://canvas.instructure.com/courses/996678/assignments/4433196]() to submit your work.
+Deploy your chocolate pizza solution using Github Pages and both partners should submit to canvas the Deployed URL as well as the Repo URL so that we can both view your result and your code!
