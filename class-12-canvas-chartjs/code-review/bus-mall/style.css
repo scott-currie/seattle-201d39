@@ -1,0 +1,6 @@
+#my-image1, #my-image2, #my-image3{
+    border: 1px solid red;
+    margin: 15px 30px;
+    padding: 20px;
+    width: 20%;
+}
