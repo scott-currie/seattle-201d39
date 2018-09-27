@@ -13,7 +13,7 @@ Cart.prototype.addItem = function(product, quantity) {
 
 Cart.prototype.saveToLocalStorage = function() {
   var jsonCart = JSON.stringify(this);
-  localStorage.addItem('cart');
+  localStorage.setItem('cart', jsonCart);
 };
 
 Cart.prototype.removeItem = function(item) {
@@ -38,10 +38,19 @@ var Product = function(filePath, name) {
   this.name = name;
   Product.allProducts.push(this);
 };
+
+Product.prototype.getProductByName = function (name) {
+  for (var i = 0; i < Product.allProducts.length; i++) {
+    if (Product.allProducts[i].name === name) {
+      return Product.allProducts[i];
+    }
+  }
+};
+
 Product.allProducts = [];
 
 function generateCatalog() {
-  new Product('assets/bag.jpg', 'Bag');
+  console.log(new Product('assets/bag.jpg', 'Bag'));
   new Product('assets/banana.jpg', 'Banana');
   new Product('assets/bathroom.jpg', 'Bathroom');
   new Product('assets/boots.jpg', 'Boots');
@@ -69,7 +78,7 @@ Product.prototype.getProductByName = function (name) {
       return Product.allProducts[i];
     }
   }
-}
+};
 
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
