@@ -21,7 +21,9 @@ Cart.prototype.removeItem = function(item) {
   // Loop through this.items and compare each name to item.name
   for (var i = 0; i < this.items.length; i++) {
     if (this.items.name === item.name) {
+      // swap the current item with the last item
       this.items[i] = this.items[this.items.length - 1];
+      // throw away the last item
       this.items.pop();
     }
   }
@@ -37,14 +39,6 @@ var Product = function(filePath, name) {
   this.filePath = filePath;
   this.name = name;
   Product.allProducts.push(this);
-};
-
-Product.prototype.getProductByName = function (name) {
-  for (var i = 0; i < Product.allProducts.length; i++) {
-    if (Product.allProducts[i].name === name) {
-      return Product.allProducts[i];
-    }
-  }
 };
 
 Product.allProducts = [];
@@ -72,13 +66,6 @@ function generateCatalog() {
   new Product('assets/wine-glass.jpg', 'Wine Glass');
 }
 
-Product.prototype.getProductByName = function (name) {
-  for (var i = 0; i < Product.allProducts.length; i++) {
-    if (Product.allProducts[i].name === name) {
-      return Product.allProducts[i];
-    }
-  }
-};
 
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
