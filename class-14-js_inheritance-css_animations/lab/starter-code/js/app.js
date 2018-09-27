@@ -47,7 +47,7 @@ var getProductByName = function (name) {
       return Product.allProducts[i];
     }
   }
-};
+}
 
 Product.allProducts = [];
 
