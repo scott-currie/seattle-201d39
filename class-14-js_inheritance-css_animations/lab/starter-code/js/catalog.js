@@ -42,14 +42,15 @@ function addSelectedItemToCart() {
   // get the quantity
   var selectedProductQuantity = parseInt(document.getElementById('quantity').value);
   // TODO: using those, add one item to the Cart
-  cart.addItem(new CartItem(selectedProductName, selectedProductQuantity));
+  cart.addItem(selectedProductName, selectedProductQuantity);
 }
 
 // Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
   var totalItems = 0;
+  // console.log('cart items length', cart.items.length);
   for (var i = 0; i < cart.items.length; i++) {
-    console.log(cart.items);
+    console.log(cart.items[i]);
     totalItems += cart.items[i].quantity;
   }
   console.log('totalItems=', totalItems);
