@@ -38,9 +38,9 @@ function handleSubmit(event) {
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
   // suss out the item picked from the select list
-  var selectedProductName = document.getElementById('items');
+  var selectedProductName = document.getElementById('items').value;
   // get the quantity
-  var selectedProductQuantity = parseInt(document.getElementById('quantity'));
+  var selectedProductQuantity = parseInt(document.getElementById('quantity').value);
   // TODO: using those, add one item to the Cart
   cart.addItem(new CartItem(selectedProductName, selectedProductQuantity));
 }
@@ -49,8 +49,10 @@ function addSelectedItemToCart() {
 function updateCounter() {
   var totalItems = 0;
   for (var i = 0; i < cart.items.length; i++) {
+    console.log(cart.items);
     totalItems += cart.items[i].quantity;
   }
+  console.log('totalItems=', totalItems);
   document.getElementById('itemCount').innerHTML = totalItems;
 }
 
@@ -59,10 +61,15 @@ function updateCartPreview() {
   // Get the item and quantity from the form
   var productName = document.getElementById('items').value;
   var productQuantity = parseInt(document.getElementById('quantity').value);
-
+  // console.log(productQuantity, productName);
   // TODO: Add a new element to the cartContents div with that information
+  var cartContents = document.getElementById('cartContents');
   var cartContent = document.createElement('div');
+  var cartContentText = productQuantity + ' ' + productName;
+  console.log(cartContentText);
   cartContent.innerHTML = productQuantity + ' ' + productName;
+  cartContents.appendChild(cartContent);
+
   
 }
 
