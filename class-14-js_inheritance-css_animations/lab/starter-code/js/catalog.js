@@ -35,13 +35,13 @@ function handleSubmit(event) {
 
 }
 
-// TODO: Add the selected item and quantity to the cart
+// Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
   // suss out the item picked from the select list
   var selectedProductName = document.getElementById('items').value;
   // get the quantity
   var selectedProductQuantity = parseInt(document.getElementById('quantity').value);
-  // TODO: using those, add one item to the Cart
+  // using those, add one item to the Cart
   cart.addItem(selectedProductName, selectedProductQuantity);
 }
 
@@ -71,7 +71,7 @@ function updateCartPreview() {
   cartContent.innerHTML = productQuantity + ' ' + productName;
   cartContents.appendChild(cartContent);
 
-  
+
 }
 
 // Set up the "submit" event listener on the form.
