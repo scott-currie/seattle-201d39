@@ -41,6 +41,14 @@ var Product = function(filePath, name) {
   Product.allProducts.push(this);
 };
 
+var getProductByName = function (name) {
+  for (var i = 0; i < Product.allProducts.length; i++) {
+    if (Product.allProducts[i].name === name) {
+      return Product.allProducts[i];
+    }
+  }
+};
+
 Product.allProducts = [];
 
 function generateCatalog() {
