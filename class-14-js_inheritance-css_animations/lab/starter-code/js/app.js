@@ -63,5 +63,13 @@ function generateCatalog() {
   new Product('assets/wine-glass.jpg', 'Wine Glass');
 }
 
+Product.prototype.getProductByName = function (name) {
+  for (var i = 0; i < Product.allProducts.length; i++) {
+    if (Product.allProducts[i].name === name) {
+      return Product.allProducts[i];
+    }
+  }
+}
+
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
