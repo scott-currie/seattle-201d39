@@ -12,7 +12,7 @@ Cart.prototype.addItem = function(product, quantity) {
 };
 
 Cart.prototype.saveToLocalStorage = function() {
-  var jsonCart = JSON.stringify(this);
+  var jsonCart = JSON.stringify(this.items);
   localStorage.setItem('cart', jsonCart);
 };
 
@@ -20,7 +20,8 @@ Cart.prototype.removeItem = function(item) {
   // Note: You will have to decide what kind of parameter to pass in here!
   // Loop through this.items and compare each name to item.name
   for (var i = 0; i < this.items.length; i++) {
-    if (this.items.name === item.name) {
+    console.log("comparing " + this.items[i].product + " and " + item.name);
+    if (this.items[i].product === item.name) {
       // swap the current item with the last item
       this.items[i] = this.items[this.items.length - 1];
       // throw away the last item

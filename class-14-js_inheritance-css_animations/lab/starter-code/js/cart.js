@@ -41,7 +41,7 @@ function showCart() {
     target.appendChild(newElement);
     let newElementChild = document.createElement('td');
     // TODO: replace this with actual delete link
-    let newElementContent = document.createTextNode('delet this');
+    let newElementContent = document.createTextNode('X');
     newElementChild.appendChild(newElementContent);
     newElement.appendChild(newElementChild);
     newElementChild = document.createElement('td');
@@ -49,15 +49,27 @@ function showCart() {
     newElementChild.appendChild(newElementContent);
     newElement.appendChild(newElementChild);
     newElementChild = document.createElement('td');
-    newElementContent = document.createTextNode(cart.items[i].product.name);
+    newElementContent = document.createTextNode(cart.items[i].product);
     newElementChild.appendChild(newElementContent);
     newElement.appendChild(newElementChild);
   }
 }
 
-function removeItemFromCart(event) {
+var clickTarget = '';
 
+function removeItemFromCart(event) {
+  clickTarget = event.target;
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
+  if(event.target.innerHTML === 'X'){
+    var nameToDelete = clickTarget.nextElementSibling.nextElementSibling.innerHTML;
+    var productToDelete = getProductByName(nameToDelete);
+    cart.removeItem(productToDelete);
+  }
+  else{
+    console.log("They clicked elsewhere...");
+  }
+  cart.saveToLocalStorage();
+  renderCart();
   // TODO: Save the cart back to local storage
   // TODO: Re-draw the cart table
 
